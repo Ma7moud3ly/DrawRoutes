@@ -1,6 +1,12 @@
 # DrawRoutes
 
 # How To..
+
+### [Google Console](https://console.developers.google.com/)
+- Go to Google Console -> Enable APIs and Services -> and enable google ```Directions API``` and ```Maps SDK for Android```
+- back to Google Console -> Create Credentials -> API KEY and copy the api key.
+
+### Android Studio
 - Create new Google Maps Activity
 ### Manifest
 1- add internet permission (essential) and fine location (optional)
