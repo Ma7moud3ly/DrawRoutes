@@ -1,6 +1,6 @@
-# DrawRoutes
+### Draw Google Map Routes from Two Points.
 
-# How To..
+<img src='screenshot.png' height='300'>
 
 ### [Google Console](https://console.developers.google.com/)
 - Go to Google Console -> Enable APIs and Services -> and enable google ```Directions API``` and ```Maps SDK for Android```
