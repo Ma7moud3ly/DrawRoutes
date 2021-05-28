@@ -39,7 +39,10 @@ implementation 'com.google.android.gms:play-services-maps:17.0.0'
 ```
 
 ### Map Activity..
-add this code in onMapReady() callback..
+
+1-Copy util to your package [util](https://github.com/Ma7moud3ly/DrawRoutes/tree/master/app/src/main/java/com/ma7moud3ly/DrawMyRoute)
+
+2-Add this code in onMapReady() callback..
 ```
        //set the source and the dest path
         LatLng source = new LatLng(53.474353213819775, -2.194336680184662);
