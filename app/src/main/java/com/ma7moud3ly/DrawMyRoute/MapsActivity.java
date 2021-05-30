@@ -1,6 +1,8 @@
 package com.ma7moud3ly.DrawMyRoute;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -8,9 +10,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Dot;
 import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polyline;
@@ -41,8 +45,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap map) {
 
         //set the source and the dest path
-        LatLng source = new LatLng(18.204751888957418, -63.07592214047706);
-        LatLng destination = new LatLng(18.187612392585468, -63.09476338640147);
+        LatLng source = new LatLng(29.98907615977494, 31.144272205142098);
+        LatLng destination = new LatLng(30.08108304561594, 31.183598651191954);
         //read the API_Key from google_maps_key
         String API_KEY = getResources().getString(R.string.google_maps_key);
         //draw dotted walk line
@@ -65,7 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //iterate over all routes
                 for (int i = 0; i < routes.size(); i++) {
                     route = routes.get(i);
-                    color = routeColors[i];
+                    color = routeColors[i >= routes.size() ? 0 : i];
                     //draw the driving route
                     PolylineOptions options = new PolylineOptions()
                             .addAll(route.drivingRoute)
